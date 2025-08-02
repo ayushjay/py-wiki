@@ -9,7 +9,15 @@ def index(request):
                    {"entries": util.list_entries()})
 
 def entry_page(request, title):
+    title_dict = util.get_entry(title)
     return render(request,
-                "encyclopedia/index.html", 
-                {"context": util.get_entry(title)}
+                "encyclopedia/entry.html", 
+                {"title_dict1": title_dict}
                   )
+# IMPORTANT LEARNING: IT IS THE CONTEXT DICTIONARY  NAME NAME NAME THAT IS PASSED INTO THE HTML PAGE FOR USE
+def trial_page(request, name):
+    return render(request,
+                  "encyclopedia/trial_html.html",
+                  {"name_dict": name}
+                  )
+
