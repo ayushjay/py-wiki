@@ -1,11 +1,14 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
- {{ title_dict1 }}
+{{ title|capfirst }}
+
 {% endblock %}
 
 {% block body %}
-<h1> {{ title_dict1 }}</h1>
+<h1>
+    {{ title|capfirst }}
+</h1>
 
 <p>
 
